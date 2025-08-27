@@ -37,7 +37,7 @@ const navItems = [
   { icon: IconSearch, label: 'OSINT', path: '/osint' },
   { icon: IconHexagons, label: 'Honeypot', path: '/honeypot' },
   { icon: IconLock, label: 'Reverse Engineering', path: '/reverse-eng' },
-  { icon: IconBrandWeb3, label: 'Web3 Security', path: '/web3' },
+  { icon: IconBrandTelegram, label: 'Web3 Security', path: '/web3' },
   { icon: IconTarget, label: 'Plugin Architecture', path: '/plugins' },
   { icon: IconBell, label: 'Notifications', path: '/notifications' },
   { icon: IconReportAnalytics, label: 'Management', path: '/management' },
