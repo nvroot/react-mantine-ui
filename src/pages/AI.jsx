@@ -1,5 +1,5 @@
 import { Container, Title, Grid, Card, Text, Badge, Button, Group, Stack } from '@mantine/core'
-import { IconRobot, IconBrain, IconSettings, IconPlay } from '@tabler/icons-react'
+import { IconRobot, IconBrain, IconSettings, IconPlayerPlay } from '@tabler/icons-react'
 
 export function AIPage() {
   const agents = [
