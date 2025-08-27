@@ -19,12 +19,14 @@ import {
   IconCpu,
   IconInfoCircle,
   IconCurrency,
-  IconTarget
+  IconTarget,
+  IconBrain
 } from '@tabler/icons-react'
 
 const navItems = [
   { icon: IconDashboard, label: 'Dashboard', path: '/' },
   { icon: IconRobot, label: 'AI Engine', path: '/ai' },
+  { icon: IconBrain, label: 'AI Agent Builder', path: '/ai-agent' },
   { icon: IconBug, label: 'Bug Bounty', path: '/bug-bounty' },
   { icon: IconCode, label: 'Exploit Dev', path: '/exploit-dev' },
   { icon: IconShield, label: 'Pentest Automation', path: '/pentest' },

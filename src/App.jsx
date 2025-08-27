@@ -5,6 +5,7 @@ import { Navbar } from './components/Layout/Navbar'
 import { Header } from './components/Layout/Header'
 import { Dashboard } from './pages/Dashboard'
 import { AIPage } from './pages/AI'
+import { AIAgentPage } from './pages/AIAgent'
 import { BugBountyPage } from './pages/BugBounty'
 import { ExploitDevPage } from './pages/ExploitDev'
 import { PentestPage } from './pages/Pentest'
@@ -48,6 +49,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/ai" element={<AIPage />} />
+          <Route path="/ai-agent" element={<AIAgentPage />} />
           <Route path="/bug-bounty" element={<BugBountyPage />} />
           <Route path="/exploit-dev" element={<ExploitDevPage />} />
           <Route path="/pentest" element={<PentestPage />} />
