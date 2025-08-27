@@ -44,7 +44,7 @@ export function AIPage() {
               </Stack>
 
               <Group gap="xs">
-                <Button variant="light" size="xs" leftSection={<IconPlay size={14} />}>
+                <Button variant="light" size="xs" leftSection={<IconPlayerPlay size={14} />}>
                   Run
                 </Button>
                 <Button variant="subtle" size="xs" leftSection={<IconSettings size={14} />}>
