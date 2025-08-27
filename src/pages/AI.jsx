@@ -1,60 +1,68 @@
-import { Container, Title, Grid, Card, Text, Badge, Button, Group, Stack } from '@mantine/core'
-import { IconRobot, IconBrain, IconSettings, IconPlayerPlay } from '@tabler/icons-react'
+import { Container, Title, Tabs, Group, Button } from '@mantine/core'
+import { IconRobot, IconSettings, IconDatabase, IconBrain, IconTemplate, IconMessage } from '@tabler/icons-react'
+import { AIProviders } from '../components/AI/AIProviders'
+import { MCPConnector } from '../components/AI/MCPConnector'
+import { PromptTemplates } from '../components/AI/PromptTemplates'
+import { MemoryManagement } from '../components/AI/MemoryManagement'
+import { VectorDB } from '../components/AI/VectorDB'
+import { RAGCapabilities } from '../components/AI/RAGCapabilities'
 
 export function AIPage() {
-  const agents = [
-    { name: 'Web Scanner Agent', status: 'Active', type: 'Scanner', model: 'GPT-4' },
-    { name: 'Exploit Generator', status: 'Idle', type: 'Generator', model: 'Claude-3' },
-    { name: 'Vulnerability Analyzer', status: 'Active', type: 'Analyzer', model: 'GPT-4' },
-    { name: 'Report Writer', status: 'Active', type: 'Writer', model: 'Gemini-Pro' },
-  ]
-
   return (
     <Container size="xl" px={0}>
       <Group justify="space-between" mb="lg">
         <Title order={2}>AI Engine</Title>
         <Button leftSection={<IconRobot size={16} />}>
-          Create Agent
+          Create AI Provider
         </Button>
       </Group>
 
-      <Grid gutter="md">
-        {agents.map((agent, index) => (
-          <Grid.Col key={index} span={{ base: 12, md: 6, lg: 4 }}>
-            <Card withBorder p="lg">
-              <Group justify="space-between" mb="md">
-                <Group>
-                  <IconBrain size={20} />
-                  <Text fw={500}>{agent.name}</Text>
-                </Group>
-                <Badge color={agent.status === 'Active' ? 'green' : 'gray'} size="sm">
-                  {agent.status}
-                </Badge>
-              </Group>
+      <Tabs defaultValue="providers" keepMounted={false}>
+        <Tabs.List>
+          <Tabs.Tab value="providers" leftSection={<IconSettings size={16} />}>
+            AI Providers
+          </Tabs.Tab>
+          <Tabs.Tab value="mcp" leftSection={<IconDatabase size={16} />}>
+            MCP Connector
+          </Tabs.Tab>
+          <Tabs.Tab value="templates" leftSection={<IconTemplate size={16} />}>
+            Prompt Templates
+          </Tabs.Tab>
+          <Tabs.Tab value="memory" leftSection={<IconBrain size={16} />}>
+            Memory Management
+          </Tabs.Tab>
+          <Tabs.Tab value="vectordb" leftSection={<IconDatabase size={16} />}>
+            Vector Database
+          </Tabs.Tab>
+          <Tabs.Tab value="rag" leftSection={<IconMessage size={16} />}>
+            RAG Capabilities
+          </Tabs.Tab>
+        </Tabs.List>
 
-              <Stack gap="xs" mb="md">
-                <Group justify="space-between">
-                  <Text size="sm" c="dimmed">Type</Text>
-                  <Text size="sm">{agent.type}</Text>
-                </Group>
-                <Group justify="space-between">
-                  <Text size="sm" c="dimmed">Model</Text>
-                  <Text size="sm">{agent.model}</Text>
-                </Group>
-              </Stack>
+        <Tabs.Panel value="providers" pt="md">
+          <AIProviders />
+        </Tabs.Panel>
 
-              <Group gap="xs">
-                <Button variant="light" size="xs" leftSection={<IconPlayerPlay size={14} />}>
-                  Run
-                </Button>
-                <Button variant="subtle" size="xs" leftSection={<IconSettings size={14} />}>
-                  Configure
-                </Button>
-              </Group>
-            </Card>
-          </Grid.Col>
-        ))}
-      </Grid>
+        <Tabs.Panel value="mcp" pt="md">
+          <MCPConnector />
+        </Tabs.Panel>
+
+        <Tabs.Panel value="templates" pt="md">
+          <PromptTemplates />
+        </Tabs.Panel>
+
+        <Tabs.Panel value="memory" pt="md">
+          <MemoryManagement />
+        </Tabs.Panel>
+
+        <Tabs.Panel value="vectordb" pt="md">
+          <VectorDB />
+        </Tabs.Panel>
+
+        <Tabs.Panel value="rag" pt="md">
+          <RAGCapabilities />
+        </Tabs.Panel>
+      </Tabs>
     </Container>
   )
 }
