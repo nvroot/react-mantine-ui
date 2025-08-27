@@ -18,7 +18,7 @@ import {
   IconLock,
   IconCpu,
   IconInfoCircle,
-  IconBrandWeb3,
+  IconBrandTelegram,
   IconTarget
 } from '@tabler/icons-react'
 
